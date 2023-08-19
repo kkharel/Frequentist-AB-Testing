@@ -1,4 +1,4 @@
-# Frequentist A/B testing
+# Frequentist A/B testing for Proportions
 
 ## Use Case: 
 Suppose we want to test the website where we have two variants. Variant A is the current version of the website (control) and Variant B is the new version we would like to test (treatment). We want to know whether user converts or not ( conversion meaning users purchase at least one item then they are considered converted if not then not converted).
