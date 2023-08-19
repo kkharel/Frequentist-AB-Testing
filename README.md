@@ -1,4 +1,4 @@
-# Frequentist A/B testing for Proportions
+![standard_normal](https://github.com/kkharel/Frequentist-AB-Testing/assets/59852121/ed12d94f-7546-44ac-b5fd-06ac21b28b03)# Frequentist A/B testing for Proportions
 
 ## Use Case: 
 Suppose we want to test the website where we have two variants. Variant A is the current version of the website (control) and Variant B is the new version we would like to test (treatment). We want to know whether user converts or not ( conversion meaning users purchase at least one item then they are considered converted if not then not converted).
@@ -37,8 +37,7 @@ from our data proportions which provide insights into whether the observed diffe
 
 Z-value: -2.4106584575622727
 
-![Standard_Normal](https://github.com/kkharel/Frequentist-AB-Testing/assets/59852121/48a383a4-b575-4408-b97d-2eb9def7be03)
-
+![Uploading standard_normal.jpg…]()
 
 ## P-value and Decision
 
@@ -55,7 +54,8 @@ The decision we made is to choose variant B as a new website design in terms of 
 ## Confidence Interval
 From the plot above, we can see that the confidence interval overlaps between two variants. Confidence intervals capture uncertainty in the estimates. A small overlap acknowledges that there's some uncertainty about the true values of the parameters being estimated. It's important to communicate this uncertainty along with the significant result. The precision of the estimates matters. If the overlapping portion of the confidence intervals is small and narrow, it indicates that the estimates are relatively precise, which is a positive aspect. If the confidence intervals are slightly overlapping, but the null hypothesis has been rejected (i.e., we have a statistically significant result), it means that the statistical test has detected a significant difference between the groups despite the overlap. 
 
-![ci](https://github.com/kkharel/Frequentist-AB-Testing/assets/59852121/e28ba744-c702-4921-8faf-5adb3c4b6be8)
+![ci](https://github.com/kkharel/Frequentist-AB-Testing/assets/59852121/eb5c4202-7ef0-43a1-a216-36d61af899fa)
+
 
 Confidence Interval for Variant A: (0.09647514491891594, 0.11214318613443562)
 
