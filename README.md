@@ -44,15 +44,16 @@ Z-value: -2.4106584575622727
 
 p-value: 0.0159237524739011
 
-If the p-value is less than or equal to the chosen significance level (alpha), you reject the null hypothesis in favor of the alternative hypothesis.
-If the p-value is greater than the significance level, you fail to reject the null hypothesis.
+If the p-value is less than or equal to the chosen significance level (alpha), we reject the null hypothesis in favor of the alternative hypothesis.
+
+If the p-value is greater than the significance level, we fail to reject the null hypothesis.
 
 Since our p-value is less than chosen significane level, we have evidence to reject the null hypothesis that we do not observe any difference between two variants.
 
 The decision we made is to choose variant B as a new website design in terms of conversion rates.
 
 ## Confidence Interval
-From the plot above, we can see that the confidence interval overlaps between two variants. Confidence intervals capture uncertainty in the estimates. A small overlap acknowledges that there's some uncertainty about the true values of the parameters being estimated. It's important to communicate this uncertainty along with the significant result. The precision of the estimates matters. If the overlapping portion of the confidence intervals is small and narrow, it indicates that the estimates are relatively precise, which is a positive aspect.If the confidence intervals are slightly overlapping, but the null hypothesis has been rejected (i.e., you have a statistically significant result),it means that the statistical test has detected a significant difference between the groups despite the overlap. 
+From the plot above, we can see that the confidence interval overlaps between two variants. Confidence intervals capture uncertainty in the estimates. A small overlap acknowledges that there's some uncertainty about the true values of the parameters being estimated. It's important to communicate this uncertainty along with the significant result. The precision of the estimates matters. If the overlapping portion of the confidence intervals is small and narrow, it indicates that the estimates are relatively precise, which is a positive aspect. If the confidence intervals are slightly overlapping, but the null hypothesis has been rejected (i.e., we have a statistically significant result), it means that the statistical test has detected a significant difference between the groups despite the overlap. 
 
 ![ci](https://github.com/kkharel/Frequentist-AB-Testing/assets/59852121/e28ba744-c702-4921-8faf-5adb3c4b6be8)
 
