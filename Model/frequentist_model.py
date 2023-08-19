@@ -109,6 +109,7 @@ def standard_normal(x_bar_norm, legend_title):
   plt.fill_between(x, y, where=crit_mask, color='blue', alpha=0.5, label='True')
   plt.fill_between(x, y, where=~crit_mask, color='red', alpha=0.5, label='False')
   plt.axvline(x_bar_norm, color='red', linestyle='--')
+  plt.axvline(-x_bar_norm, color='red', linestyle='--')
   plt.xlabel('Sample Proportions', fontsize=7)
   plt.ylabel('Probability Density Function', fontsize=7)
   plt.title('Standard Normal Distribution of Proportions', fontsize=7)
