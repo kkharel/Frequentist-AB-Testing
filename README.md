@@ -60,3 +60,111 @@ From the plot above, we can see that the confidence interval overlaps between tw
 Confidence Interval for Variant A: (0.09647514491891594, 0.11214318613443562)
 
 Confidence Interval for Variant B: (0.11005265069002206, 0.1266094560131
+
+
+Guide Appendix:
+
+
+### Hypothesis Testing
+
+How to choose appropriate Statistical Test? In general,
+1) Identify Data Type:
+      Categorial - When data contains categories/groups
+   
+      Numerical - When data contains numbers - can be continuous or discrete
+
+2) Research Question:
+
+   Comparison of Groups: Comparing two or more groups to see whether there is a difference between them
+   
+   Association/Causation: examining relatinship between variables to see if changes in one variable are associated with changes in another
+      
+3) Number of Groups/Variables:
+   
+     One Group: Wants to determine if its mean differs from a known value, one sample t-test or one sample z-test
+      
+     Two Groups: comparing two groups, can use t-test (paired or independent), Mann-Whitney U test, chi-squared test, or Fisher's exact test depending on data and 
+      assumptions
+      
+      Multiple Groups: ANOVA for continuous data, chi-squares or Fisher's exact test for categorical data
+      
+4) Assumptions:
+   
+      Different test have different assumptions such as normality, homogeneity of variances and independence. The data needs to meet these assumptions for that
+      particular test. If the assumptions are violated then use transformation techniques or non-parametric tests
+      
+5) Data Distribution:
+   
+      Normal Distribution: If data follows normal distribution then parametric tests like t-test and ANOVA are appropriate
+
+      Non-Normal Distribution: If data is not normally distributed then non-parametric tests Mann-Whitney U test or Kruskal-Wallis test are appropriate
+      
+6) Sample Design:
+   
+      Paired Samples: If we have data pairs that are related such as before and after intervention situations then paired t-test or Wilcoxon signed-rank test may be 
+      appropriate
+   
+      Independent Samples: If samples are independent then we can use independent t-test or non-parametric alternatives
+      
+7) Data Relationships:
+    
+      Correlation: To measure the strength and direction of a linear relationship between two continuous variables, we can use Pearson Correlation for normally distributed 
+      data and Spearman's rank correation for non-normally distributed data
+      
+      Regression: To predict one variable using other variable/variables. If we have categorical predictors then we want to use Logistic Regression
+      
+### Comparing Means:
+
+  Z-test: Used to compare means of continuous variable between two independent groups when sample size is large, population standard deviation is known, data is 
+          approximately normally distributed and the samples in each group must be independent of each other
+  
+  Independent Samples T-test: data within each group is normally distributed and has equal variance
+  
+  Paired-Samples T-test: Compare means within the same group at different points in time. The difference between paired observations are normally distributed
+  
+  One-Sample T-test: Compare mean of a sample to a known or hypothesized population mean with the assumption that data is normally distributed
+  
+  ANOVA: Comparing means of three or more independent groups. Assume data is normally distributed and has equal variances
+  
+  Welch's T-test: Modification of independent samples t-test that does not assume equal variances between groups
+  
+  Kruskal-Wallis Test: Non-parametric alternative to ANOVA for comparing means when assumptions of normality and equal variances are violated
+  
+  
+### Comparing Proportions:
+Z-test for Proportions: compare proportions from two independent groups. Assumes that sample size are sufficiently large
+  
+Chi-Squared Test for Proportions (2X2 Table): When we have 2X2  contigency table and want to compare proportions between groups. Commonly used in situations like comparing proportion of successes between groups
+  
+Chi-Squared Test for Proportions(Larger Tables): For situations where we have more than 2X2 tables, use extensions such as chi-squared test for independence or homogeneity
+  
+Fisher's exact test: When dealing with small sample sizes on 2X2 contigency table, useful when assumptions of chi-squared test are not met.
+  
+  
+### Flow:
+Develop Hypothesis: Null Hypothesis, Alternative Hypothesis
+
+Choose the variables and metrics
+
+Random Assignment - Control Group & Treatment Group
+
+Collect Data
+
+Perform Descriptive Statistics
+
+Establish Significane Level
+
+Identify Test Statistic
+
+Determine p-value
+
+Compare p-value to fixed Signifance Level 
+
+Make a Decision
+
+Interpret the Results
+
+Consider Practical Significane
+
+Implement the Winning Version
+
