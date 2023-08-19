@@ -21,7 +21,10 @@ Suppose for our experiment, we set MDE to 2%, alpha at 5%, beta at 95%, and esti
 
 ## Sample Size Calculation
 
-Now, we will calculate the sample size required for this experiment with the calculate_sample_size_proportions function which is inside models folder. Note that the sample size calculation is per group. From the calculate_sample_size_proportions function we know that in order to detect 2% change, we need 5848 samples per group. Once we get the sample size required, in practical world we would start collecting data for the experiment. In order to mimic the true would scenario, we will create a simulated dataset.
+Now, we will calculate the sample size required for this experiment with the calculate_sample_size_proportions function which is inside models folder. Note that the sample size calculation is per group. From the calculate_sample_size_proportions function we know that in order to detect 2% change, we need 5848 samples per group. We also carried out power analysis with different effect sizes, see the plot below for cross verification. Once we get the sample size required, in practical world we would start 
+collecting data for the experiment. In order to mimic the true would scenario, we will create a simulated dataset.
+
+![power](https://github.com/kkharel/Frequentist-AB-Testing/assets/59852121/4cdafdcc-fb58-4c95-ad0a-88344a2e95a6)
 
 ## Generated Data
 
