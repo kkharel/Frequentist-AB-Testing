@@ -1,4 +1,3 @@
-![standard_normal](https://github.com/kkharel/Frequentist-AB-Testing/assets/59852121/ed12d94f-7546-44ac-b5fd-06ac21b28b03)# Frequentist A/B testing for Proportions
 
 ## Use Case: 
 Suppose we want to test the website where we have two variants. Variant A is the current version of the website (control) and Variant B is the new version we would like to test (treatment). We want to know whether user converts or not ( conversion meaning users purchase at least one item then they are considered converted if not then not converted).
@@ -37,7 +36,7 @@ from our data proportions which provide insights into whether the observed diffe
 
 Z-value: -2.4106584575622727
 
-![Uploading standard_normal.jpg…]()
+![standard_normal](https://github.com/kkharel/Frequentist-AB-Testing/assets/59852121/ed12d94f-7546-44ac-b5fd-06ac21b28b03)# Frequentist A/B testing for Proportions
 
 ## P-value and Decision
 
