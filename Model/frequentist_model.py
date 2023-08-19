@@ -111,15 +111,16 @@ def standard_normal(x_bar_norm, legend_title):
   plt.axvline(1.96, color='green', linestyle='--')
   plt.axvline(-1.96, color='green', linestyle='--')
   plt.axvline(x_bar_norm, color='red', linestyle='--')
-  plt.xlabel('Sample Means', fontsize=7)
+  plt.xlabel('Sample Proportions', fontsize=7)
   plt.ylabel('Probability Density Function', fontsize=7)
-  plt.title('Standard Normal Distribution of Sample Mean', fontsize=7)
+  plt.title('Standard Normal Distribution of Proportions', fontsize=7)
   legend = plt.legend(loc=1, title=legend_title)
   legend.get_title().set_fontsize(7)
   for label in legend.get_texts():  
     label.set_fontsize(5)
   plt.xticks(fontsize=7)
   plt.yticks(fontsize=7)
+  plt.savefig("standard_normal.jpg", format="jpg", dpi=300, bbox_inches="tight")
   plt.show()
 
 def proportions(successes_A, successes_B, trials_A, trials_B, mode='two_sided'):
@@ -174,7 +175,7 @@ def confidence_interval_plot(proportion_A, proportion_B, sample_A, sample_B, alp
   plt.axvline(proportion_B + se_B * z_score, color='blue', linestyle='--')
   plt.axvline(proportion_B - se_B * z_score, color='blue', linestyle='--')
     
-  plt.xlabel('Sample Mean Distribution of Each Variant', fontsize = 7)
+  plt.xlabel('Proportion Distribution of Each Variant', fontsize = 7)
   plt.ylabel('Probability Density Function', fontsize = 7)
   plt.title(f'Confidence Intervals at alpha={alpha}', fontsize = 7)
   legend = plt.legend(loc=1)
@@ -183,7 +184,7 @@ def confidence_interval_plot(proportion_A, proportion_B, sample_A, sample_B, alp
     label.set_fontsize(5)
   plt.xticks(fontsize=7)
   plt.yticks(fontsize=7)
-  plt.grid(True)
+  plt.savefig("ci.jpg", format="jpg", dpi=300, bbox_inches="tight")
   plt.show()
   return ci_A, ci_B
 
