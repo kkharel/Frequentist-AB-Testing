@@ -5,6 +5,7 @@ from plotnine import ggplot
 import scipy as sp
 import scipy.stats as sp_stats
 import statsmodels as sm
+from scipy.stats import norm
 
 
 
@@ -31,6 +32,48 @@ p_control = 0.10  # Estimated proportion in the control group (10%)
 
 required_sample_per_group = calculate_sample_size_proportions(MDE, alpha, beta, p_control, mode='two_sided')
 required_sample_per_group
+
+
+# Power Plot to cross verify above
+
+alpha = 0.05  # Significance level
+power = 0.05  # Desired statistical power
+p1 = 0.10  # Baseline proportion for Group 1
+p2 = 0.12  # Expected proportion for Group 2
+max_sample_size = 10000  # Maximum sample size to consider
+num_effect_sizes = 5  # Number of different effect sizes to consider
+num_samples = 100  # Number of sample sizes to consider
+
+sample_sizes = np.linspace(10, max_sample_size, num_samples)
+
+effect_sizes = np.linspace(0.01, 0.05, num_effect_sizes)
+power_values = np.zeros((len(sample_sizes), len(effect_sizes)))
+
+for i, sample_size in enumerate(sample_sizes):
+  n1 = int(sample_size)
+  n2 = int(sample_size)
+  p_critical = (p1 + p2) / 2
+  sd = np.sqrt(p_critical * (1 - p_critical) * (1/n1 + 1/n2))
+  z_critical = norm.ppf(1 - alpha/2)
+  for j, effect_size in enumerate(effect_sizes):
+    p_diff = effect_size
+    z_effect = (p_diff - 0) / sd
+    power_value = 1 - norm.cdf(z_effect - z_critical)
+    power_values[i, j] = power_value
+
+plt.figure(figsize=(10, 6))
+for j, effect_size in enumerate(effect_sizes):
+  plt.plot(sample_sizes, 1 - power_values[:, j], label=f'Effect Size = {effect_size:.2f}')  # Flipping the power values
+
+plt.axhline(y=1 - power, color='r', linestyle='--', label=f'Desired Power ({power:.2f})')  # Flipping the desired power
+plt.xlabel('Sample Size')
+plt.ylabel('Statistical Power')
+plt.title('Proportion Power Plot for Different Sample Sizes and Effect Sizes')
+plt.legend()
+plt.ylim(1, 0)  
+plt.savefig("power.jpg", format="jpg", dpi=300, bbox_inches="tight")
+plt.show()
+
 
 def generate_sample_data(samples, p_control, MDE):
   num_users_per_group = samples
@@ -110,16 +153,15 @@ def standard_normal(x_bar_norm, legend_title):
   plt.fill_between(x, y, where=~crit_mask, color='red', alpha=0.5, label='False')
   plt.axvline(x_bar_norm, color='red', linestyle='--')
   plt.axvline(-x_bar_norm, color='red', linestyle='--')
-  plt.xlabel('Sample Proportions', fontsize=7)
   plt.ylabel('Probability Density Function', fontsize=7)
-  plt.title('Standard Normal Distribution of Proportions', fontsize=7)
+  plt.title('Standard Normal Distribution', fontsize=7)
   legend = plt.legend(loc=1, title=legend_title)
   legend.get_title().set_fontsize(7)
   for label in legend.get_texts():  
     label.set_fontsize(5)
   plt.xticks(fontsize=7)
   plt.yticks(fontsize=7)
-  plt.savefig("standard_normal.jpg", format="jpg", dpi=300, bbox_inches="tight")
+  ##plt.savefig("standard_normal.jpg", format="jpg", dpi=300, bbox_inches="tight")
   plt.show()
 
 def proportions(successes_A, successes_B, trials_A, trials_B, mode='two_sided'):
@@ -183,7 +225,7 @@ def confidence_interval_plot(proportion_A, proportion_B, sample_A, sample_B, alp
     label.set_fontsize(5)
   plt.xticks(fontsize=7)
   plt.yticks(fontsize=7)
-  plt.savefig("ci.jpg", format="jpg", dpi=300, bbox_inches="tight")
+  #plt.savefig("ci.jpg", format="jpg", dpi=300, bbox_inches="tight")
   plt.show()
   return ci_A, ci_B
 
@@ -191,3 +233,5 @@ confidence_interval_plot(data.control[1]/data.control[0], data.treatment[1]/data
 ci_A, ci_B = confidence_interval_plot(data.control[1]/data.control[0], data.treatment[1]/data.treatment[0], data.control[0], data.treatment[0], alpha = 0.05)
 print("Confidence Interval for Variant A:", ci_A)
 print("Confidence Interval for Variant B:", ci_B)
+
+
