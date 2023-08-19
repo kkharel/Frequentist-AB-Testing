@@ -108,8 +108,6 @@ def standard_normal(x_bar_norm, legend_title):
   plt.plot(x, y, color='black', linewidth=1)
   plt.fill_between(x, y, where=crit_mask, color='blue', alpha=0.5, label='True')
   plt.fill_between(x, y, where=~crit_mask, color='red', alpha=0.5, label='False')
-  plt.axvline(1.96, color='green', linestyle='--')
-  plt.axvline(-1.96, color='green', linestyle='--')
   plt.axvline(x_bar_norm, color='red', linestyle='--')
   plt.xlabel('Sample Proportions', fontsize=7)
   plt.ylabel('Probability Density Function', fontsize=7)
