@@ -5,8 +5,8 @@
 Suppose we want to test the website where we have two variants. Variant A is the current version of the website (control) and Variant B is the new version we would like to test (treatment). We want to know whether user converts or not ( conversion meaning users purchase at least one item then they are considered converted if not then not converted).
 
 We want to test the following hypothesis:
-## Null Hypothesis: We do not observe any difference between two Variants
-## Alternative Hypothesis: There is a different between two Variants
+### Null Hypothesis: We do not observe any difference in conversion rates between two Variants
+### Alternative Hypothesis: There is a difference in conversion rates between two Variants
 
 From the hypothesis, we know that it will be two-sided test. This means that we are interested in detecting any kind of difference between the two variants, whether it's a positive difference in one direction or a negative difference in the other direction. It's a more general form of hypothesis testing compared to a one-sided test where we would be specifically interested in a difference in one particular direction.
 
