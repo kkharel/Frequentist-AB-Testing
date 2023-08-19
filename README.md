@@ -36,7 +36,8 @@ from our data proportions which provide insights into whether the observed diffe
 
 Z-value: -2.4106584575622727
 
-![standard_normal](https://github.com/kkharel/Frequentist-AB-Testing/assets/59852121/ed12d94f-7546-44ac-b5fd-06ac21b28b03)# Frequentist A/B testing for Proportions
+![standard_normal](https://github.com/kkharel/Frequentist-AB-Testing/assets/59852121/fa927f75-c24a-403d-81d1-c570128c2419)
+
 
 ## P-value and Decision
 
