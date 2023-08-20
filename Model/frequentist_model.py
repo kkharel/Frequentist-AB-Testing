@@ -169,7 +169,7 @@ def proportions(successes_A, successes_B, trials_A, trials_B, mode='two_sided'):
   proportion_B = successes_B / trials_B
 
   overall_proportion = (successes_A + successes_B) / (trials_A + trials_B)
-  pooled_std_error = np.sqrt(overall_proportion * (1 - overall_proportion) * (1 / trials_A + 1 / trials_B))
+  pooled_std_error = np.sqrt(overall_proportion * (1 - overall_proportion) * (1 / trials_A + 1 / trials_B)) # standard error of the difference in proportions not pooled
 
   z_score = (proportion_A - proportion_B) / pooled_std_error
 
