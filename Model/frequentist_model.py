@@ -16,7 +16,7 @@ def calculate_sample_size_proportions(MDE, alpha, beta, p_control, mode='one_sid
   Z_alpha_over_2 = sp_stats.norm.ppf(1 - alpha / 2)
   Z_beta = sp_stats.norm.ppf(1 - beta)
     
-  pooled_variance = p_control * (1 - p_control)
+  pooled_variance = p_control * (1 - p_control) # not pooled but rather the estimated variance of population proportion/ used wrong terminology here, pooled is for continuous data, means
     
   if mode == 'two_sided':
     n = (2 * (Z_alpha_over_2 + Z_beta)**2 * pooled_variance) / MDE**2
